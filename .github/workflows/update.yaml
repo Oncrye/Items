@@ -1,0 +1,21 @@
+name: Update
+
+on:
+  push:
+    branches: [ "items" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm ci
+      - run: tsc
+      - run: node .
+        env:
+          mongo: ${{ secrets.mongo }}
+          key: ${{ secrets.key }}
