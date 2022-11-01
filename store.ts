@@ -22,6 +22,14 @@ let store: { themes: Purchasable[] } = {
             cost: 30000
         },
         {
+            item: 5,
+            cost: 8000
+        },
+        {
+            item: 7,
+            cost: 5000
+        }
+        {
             item: 8,
             cost: 50000
         },
