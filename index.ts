@@ -2,13 +2,6 @@ import fetch from 'node-fetch';
 import themes from './themes.js';
 import store from './store.js';
 
-export interface Theme {
-    id: number;
-    name: string;
-    source: URL;
-    rarity: 'common' | 'uncommon' | 'rare' | 'epic' | 'legendary';
-}
-
 async function clear(database: string, collection: string) {
     await fetch(`${process.env.mongo}/action/deleteMany`, {
         headers: {
